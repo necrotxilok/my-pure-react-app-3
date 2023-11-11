@@ -5,9 +5,11 @@
   "author": "necro_txilok",
   "description": "Learning how to create a pure react app from scratch.",
   "scripts": {
-    "start": "webpack-dev-server --config webpack.dev.js",
-    "watch": "webpack --watch --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js",
+    "start_ui": "webpack --watch --config ui/webpack.dev.js",
+    "build_ui": "webpack --config ui/webpack.prod.js",
+    "start": "webpack-dev-server --config app/webpack.dev.js",
+    "watch": "webpack --watch --config app/webpack.dev.js",
+    "build": "webpack --config app/webpack.prod.js",
     "storybook": "storybook dev -p 6056",
     "build-storybook": "storybook build"
   },
@@ -45,6 +47,8 @@
     "eslint-plugin-storybook": "^0.6.15",
     "file-loader": "^6.2.0",
     "mini-css-extract-plugin": "^2.7.6",
+    "node-sass": "^9.0.0",
+    "sass-loader": "^13.3.2",
     "storybook": "^7.5.3",
     "style-loader": "^3.3.3",
     "webpack": "^5.89.0",

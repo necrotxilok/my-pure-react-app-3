@@ -12,7 +12,7 @@ const Button = (props) => {
 				backgroundColor: theme.primaryColor,
 			}}
 			onClick={() => {
-				console.log('Button Pressed!!')
+				console.log('Button Pressed!')
 				props.onClick && props.onClick()
 			}}
 		>

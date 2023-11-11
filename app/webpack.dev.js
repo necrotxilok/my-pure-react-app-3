@@ -2,7 +2,10 @@
 const { merge } = require('webpack-merge')
 const common = require('./webpack.config')
 const path = require('path')
-const package = require('./package')
+
+rootDir = process.cwd()
+
+const package = require(path.resolve(rootDir, 'package'))
 
 module.exports = merge(common, {
   mode: 'development',
@@ -16,7 +19,7 @@ module.exports = merge(common, {
   },
   devServer: {
     static: {
-      directory: path.join(__dirname, 'public'),
+      directory: path.resolve(rootDir, 'public'),
     },
     compress: true,
     open: false,
