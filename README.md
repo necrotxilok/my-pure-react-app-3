@@ -26,17 +26,13 @@ start.bat
 
 ## Build project
 
-First build App with
+Build complete App including UI with
 ```cmd
 build.bat
 ```
 
-And then, build the UI to override bad files
-```cmd
-build_ui.bat
-```
-
+> **NOTE:** This process will remove all contents in `dist` folder. 
 
 ## Storybook
 
-> Not tested!!
+[Not tested!!]
