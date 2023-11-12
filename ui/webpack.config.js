@@ -6,7 +6,7 @@ rootDir = process.cwd()
 module.exports = {
   entry: {
     // Vendor
-    vendor: ['react', 'react-dom'],
+    //vendor: ['react', 'react-dom', 'prop-types'],
     // UI Components
     ui: {
       import: path.resolve(__dirname, 'src/index.js'),
@@ -18,6 +18,17 @@ module.exports = {
     filename: '[name].js',
     libraryTarget: "umd",
     library: "ui",
+  },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendor',
+          chunks: 'all',
+        },
+      },
+    },
   },
   resolve: {
     symlinks: false,

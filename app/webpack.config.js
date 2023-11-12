@@ -7,7 +7,7 @@ module.exports = {
   externals: ['ui'],
   entry: {
     // Vendor
-    vendor: ['react', 'react-dom'],
+    //vendor: ['react', 'react-dom', 'prop-types'],
     // Themes
     /*
     default: {
@@ -22,13 +22,24 @@ module.exports = {
     // Application
     app: {
       import: path.resolve(__dirname, 'src/index.jsx'),
-      dependOn: ['vendor'],
+      //dependOn: ['vendor'],
     },
   },
   output: {
     path: path.resolve(rootDir, 'dist/app'),
     filename: '[name].js',
   },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendor',
+          chunks: 'all',
+        },
+      },
+    },
+  },  
   resolve: {
     symlinks: false,
     extensions: ['.jsx', '.js'],
