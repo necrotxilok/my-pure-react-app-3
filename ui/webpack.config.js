@@ -5,12 +5,9 @@ rootDir = process.cwd()
 
 module.exports = {
   entry: {
-    // Vendor
-    //vendor: ['react', 'react-dom', 'prop-types'],
     // UI Components
     ui: {
       import: path.resolve(__dirname, 'src/index.js'),
-      //dependOn: 'vendor',
     },
   },
   output: {

@@ -6,23 +6,20 @@ rootDir = process.cwd()
 module.exports = {
   externals: ['ui'],
   entry: {
-    // Vendor
-    //vendor: ['react', 'react-dom', 'prop-types'],
     // Themes
     /*
     default: {
-      import: './src/themes/default',
+      import: path.resolve(__dirname, 'src/themes/default'),
       filename: 'themes/[name].js',
     },
     colorize: {
-      import: './src/themes/colorize',
+      import: path.resolve(__dirname, 'src/themes/colorize'),
       filename: 'themes/[name].js',
     },
     */
     // Application
     app: {
       import: path.resolve(__dirname, 'src/index.jsx'),
-      //dependOn: ['vendor'],
     },
   },
   output: {
